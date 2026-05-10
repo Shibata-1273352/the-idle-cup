@@ -382,4 +382,46 @@
 - **Status**: ✅ 適用完了 / 提出可能状態（リモート同期は次の commit & push にて）
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-025: Conventional Commits 1.0.0 規約採用と過去 commit 履歴書き換え
+- **Timestamp**: 2026-05-10T19:50:00+09:00
+- **Stage**: Inception (Repository Convention Adoption)
+- **Proposer**: テックリード（外部レビュー後の規約整備要請）
+- **Approver**: テックリード（書き換え案 9 件・force push 実行・CONTRIBUTING.md 配置・本エントリ記録の全体を明示承認）
+- **Decision**: 本リポジトリのコミットメッセージ規約として [Conventional Commits 1.0.0](https://www.conventionalcommits.org/ja/v1.0.0/) を採用する。**過去 9 コミットの subject も遡って書き換え** し、リポジトリ全体で規約を統一する
+- **Rationale（採用根拠）**:
+  - 公開リポジトリとして Phase 2 以降に他メンバーが参加する場合に、規約の前提知識が共有される
+  - 機械可読な commit log により、変更履歴の自動分類・SemVer 連動・リリースノート生成が可能になる
+  - Phase 1 はドキュメント中心のため `docs:` と `chore:` が支配的だが、Phase 2 で `feat:` `fix:` 等の コード系 type に拡張する基盤になる
+- **Subject 書き換え対応表（force push で履歴ごと差し替え）**:
+  | 旧 SHA / subject | 新 SHA / subject |
+  |---|---|
+  | `85efcf7` Initial commit | `72b7622` chore: bootstrap AI-DLC v0.1.7 hierarchy and inception scaffolding |
+  | `bf86979` Apply Codex review fixes (pre-submission quality gate) | `248289e` docs: apply Codex review fixes (pre-submission quality gate) |
+  | `049d353` Migrate compliance target to AI-DLC v0.1.8 | `c90b193` chore: migrate AI-DLC compliance target from v0.1.7 to v0.1.8 |
+  | `edc5257` Final quality gate: links, v0.1.8 structure, ID consistency | `49fbca1` docs: fix broken links, v0.1.8 structure, and ID consistency |
+  | `eb631ae` Apply parallel Claude+Codex review fixes (final pre-submission gate) | `0f93f75` docs: apply parallel Claude+Codex review fixes (pre-submission gate) |
+  | `5cb4c96` Add LICENSE, AWS technical highlights, and visual placeholders (P0/P1 coverage) | `730cd74` chore: add LICENSE, AWS technical highlights, and visual placeholders |
+  | `a6d54c4` Apply 2nd-round Claude+Codex review fixes (final 30-min coherence pass) | `4cb885e` docs: apply 2nd-round Claude+Codex review fixes (coherence pass) |
+  | `bb48748` Final pre-submission cleanup: remove obsolete migration script and redundant .gitkeep | `8bc1ef7` chore: remove obsolete migration script and redundant .gitkeep |
+  | `ab78a44` Apply external review feedback: README/Demo coherence, Whisper SLA realism, AI-DLC efficacy claim alignment | `efb23c9` docs: apply external review feedback (Demo coherence, Whisper SLA, efficacy claim) |
+- **Type 選定の根拠**:
+  - `docs:` 7 件 — 設計ドキュメント・README・audit・仕様書の修正がほぼ全て
+  - `chore:` 3 件 — 初期化、バージョン migration、LICENSE / 不要ファイル削除（ドキュメント以外のメンテナンス系）
+  - `feat:` `fix:` `refactor:` `perf:` 等は本リポジトリにコード実体が無いため Phase 1 では不採用、Phase 2 着手時に出現する想定
+- **Implementation Method**:
+  - `git filter-branch --msg-filter` で各 commit の最初の行（subject）のみを書き換え、body と Co-Authored-By trailer は無変更で保持
+  - 9 commit すべての SHA が変わる（履歴改変）→ `git push --force-with-lease` でリモートを上書き
+- **Append-only Convention との整合**:
+  - Subject 書き換えは「メッセージの誤りの訂正」であり、内容（diff・body・trailer）は完全保持される
+  - 本 audit エントリで旧 SHA と新 SHA の対応表を完全公開することで、過去の参照（外部レビュアーが言及した `bb48748` 等）も追跡可能
+  - これは `methodology-honesty.md` §1 の「事実は隠さず明示する」原則と整合
+- **Applied Artefacts**:
+  - `CONTRIBUTING.md` 新規配置 — 規約の type 一覧・例・Phase 1/2 での使い分けを明記
+  - 本 Entry-025 — 採用判断の記録
+- **Going Forward**:
+  - 今後すべてのコミット（本エントリを含むコミットから先）は Conventional Commits 1.0.0 形式で記述
+  - Phase 2 で他メンバー参加時には CONTRIBUTING.md を初日に共有
+- **Status**: ✅ 履歴書き換え完了 / CONTRIBUTING.md 配置 / リモート同期は次の force-push にて
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---
