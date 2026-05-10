@@ -329,4 +329,29 @@
 - **Status**: ✅ 適用完了 / 提出前最終確認待ち
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-023: 提出前最終クリーンアップ（不要ファイル削除）
+- **Timestamp**: 2026-05-10T18:55:00+09:00
+- **Stage**: Inception (Final Pre-submission Cleanup)
+- **Proposer**: AI（不要ファイル・重複・機微情報の最終監査）
+- **Approver**: テックリード（A: obsolete スクリプト削除、B: 役割を失った .gitkeep 削除を明示承認）
+- **Audit Result（機微情報・cruft）**:
+  - 高エントロピー秘密パターン（AWS / GCP / OpenAI / GitHub / Slack）: 0 件
+  - 認証情報・private key・password 代入: 0 件
+  - 個人名・メール・社名・所属組織: 0 件
+  - ローカル絶対パス `/Users/.../`: 0 件（Entry-020 で `aidlc-state.md:73-80` の絶対パス除去済み）
+  - OS / エディタ cruft（.DS_Store / *.swp / *.bak 等）: 0 件
+- **Removed Files**:
+  1. `scripts/migrate-to-aidlc-structure.sh` — Entry-014 で「移行元の旧 `01-...08-` ファイル群が存在しないため実行不能」と obsolete 判定済みの 106 行 dead code。Phase 2 でも実行価値がない（`construction/per-unit/` 配下の per-Unit Loop 着手時には別構造の移行が必要）ため、提出前に削除。空となった `scripts/` ディレクトリは git 管理外として自動消滅
+  2. `docs/images/.gitkeep` — 同ディレクトリに `the-idle-cup-overview.png`（1.7 MB）が配置されたことで `.gitkeep` の存在意義（空ディレクトリ確保）が喪失。21 行の説明文書を `.gitkeep` に詰めた構造は Git 慣習からの逸脱でもあったため削除
+- **Deliberately NOT Removed（Phase 2 へ送る判断）**:
+  - `aidlc-docs/extensions/meta/bolts/.gitkeep`（14 行のディレクトリ説明文書）— Phase 2 で `bolts/{bolt-NN}.md` セッションログを配置する際に `bolts/README.md` へリネームする予定。第2ラウンド独立レビューで「締切前のディレクトリ構造変更はリスク」と Claude が明示的に「やらない判断」を提示したため据え置き
+- **Audit Trail Integrity**:
+  - 削除されたファイルへの言及は audit.md の Entry-006 / Entry-008 / Entry-014 に残るが、これらは append-only 規約により改竄せず保持
+  - 「過去には存在し、Phase 1 確定前に削除された」という時系列が audit.md から完全に追跡可能
+- **Final Repository State**:
+  - Git tracked: 23 ファイル（25 → 削除 2 = 23）
+  - リポジトリサイズ: 約 4.3 MB（うち 1.7 MB は overview 画像）
+- **Status**: ✅ 提出可能状態
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---
