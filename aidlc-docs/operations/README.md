@@ -4,9 +4,9 @@
 
 ---
 
-## 公式 v0.1.7 における Operations の状態
+## 公式 v0.1.8 における Operations の状態
 
-公式 `awslabs/aidlc-workflows` v0.1.7 においても Operations は **placeholder 扱い**（リリース時点で核心機能が未実装）。本プロジェクトもその段階に追従する。
+公式 `awslabs/aidlc-workflows` v0.1.8 においても Operations は **placeholder 扱い**（リリース時点で核心機能が未実装、v0.1.7 から状態変更なし）。本プロジェクトもその段階に追従する。
 
 ---
 

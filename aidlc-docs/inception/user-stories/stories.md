@@ -1,7 +1,7 @@
 # User Stories — The Idle Cup
 
 > **役割**: Requirements を INVEST 準拠のユーザーストーリーに翻訳し、テスト可能な仕様にする。
-> **準拠**: AI-DLC v0.1.7 `inception/user-stories/stories.md` 配置規約 / INVEST: Independent / Negotiable / Valuable / Estimable / Small / Testable
+> **準拠**: AI-DLC v0.1.8 `inception/user-stories/stories.md` 配置規約 / INVEST: Independent / Negotiable / Valuable / Estimable / Small / Testable
 > **読者**: チーム / 審査員 / Phase 2 で参画する開発者
 
 ---

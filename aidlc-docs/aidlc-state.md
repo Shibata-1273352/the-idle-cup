@@ -13,7 +13,7 @@
 | **Stage** | Workflow Planning ✅ Complete / Construction 着手は Phase 2 |
 | **Workspace Type** | Greenfield |
 | **Last Updated** | 2026-05-10T14:45:00+09:00 |
-| **Compliance** | `awslabs/aidlc-workflows` v0.1.7（rule参照は v0.1.8 を併用） |
+| **Compliance** | `awslabs/aidlc-workflows` v0.1.8 |
 | **Submission Target** | AWS Summit Japan 2026 AI-DLC ハッカソン 書類審査（締切 2026-05-10 23:59） |
 
 ---
@@ -31,7 +31,7 @@
 | Inception | Units Generation | ✅ Complete | `construction/plans/construction-plan.md` にて 6 Unit 分解完了 |
 | Construction | Per-Unit Loop | ⏸ Phase 2 | Phase 2（予選会・決勝）で実装 |
 | Construction | Build and Test | ⏸ Phase 2 | 同上 |
-| Operations | - | ⏸ Phase 2 | placeholder（公式 v0.1.7/v0.1.8 と同じ扱い） |
+| Operations | - | ⏸ Phase 2 | placeholder（公式 v0.1.8 と同じ扱い） |
 
 ---
 
@@ -84,7 +84,7 @@
 ## Adaptive Workflow 注記
 
 - 本プロジェクトは **Greenfield** のため `inception/reverse-engineering/` ステージを skip
-- **Operations** は v0.1.7/v0.1.8 公式でも placeholder 扱いに準じ、Phase 2 として配置のみ
+- **Operations** は v0.1.8 公式でも placeholder 扱いに準じ、Phase 2 として配置のみ
 - **Bolt 単位ログ**は **2026-05-04 まで retroactive、2026-05-10〜 real-time** の二段運用。`extensions/meta/methodology-honesty.md` に明示
 - **Mob Construction** は Phase 1 では Solo + retroactive で実施。Phase 2 で最低 1 セッション実施を計画
 

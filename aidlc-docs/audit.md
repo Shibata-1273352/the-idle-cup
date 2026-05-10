@@ -192,4 +192,35 @@
 - **Note**: 指摘 7「執行 / 状態チェックリストの提出直前更新」は、本日の GitHub push / 応募フォーム送信実施時に同タイミングで反映する（Entry-018 以降で記録）
 - **Approver**: テックリード（適用後の review pending）
 
+### Entry-018: Compliance ターゲットを v0.1.7 → v0.1.8 へ更新
+- **Timestamp**: 2026-05-10T15:05:00+09:00
+- **Stage**: Inception (Pre-submission Compliance Alignment)
+- **Proposer**: AI（v0.1.7 と v0.1.8 のリリース差分調査の結果に基づく提案）
+- **Approver**: テックリード（明示承認）
+- **Decision**: 本プロジェクトの Compliance ターゲットを `awslabs/aidlc-workflows` v0.1.8 へ統一する
+- **Diff Investigation Result（v0.1.7 → v0.1.8 の実体差分）**:
+  1. `VERSION`: `0.1.7` → `0.1.8`
+  2. `aws-aidlc-rules/core-workflow.md`: rule-details 検索パスに `.aidlc/aidlc-rules/aws-aidlc-rule-details/` を先頭追加 / 各パスに「(typical with ...)」コメントと「regardless of which IDE or setup method was used」明記
+  3. `aws-aidlc-rule-details/inception/requirements-analysis.md` Step 5.1 末尾に1文追加: "Present each opt-in question in the same language as the user's conversation."
+  4. `.markdownlint-cli2.yaml` 新規追加（リポジトリ内部品質用、LLM プロンプト挙動には影響なし）
+- **Rationale（v0.1.8 移行の正当性）**:
+  - 本プロジェクトの成果物階層・責務は v0.1.7 / v0.1.8 で **完全に互換**（差分はいずれも本リポジトリに含めないファイル群、または既に本プロジェクトで遵守済の挙動）
+  - opt-in 質問の自然言語整合（v0.1.8 の追加要件）は、本プロジェクトが日本語で執筆されているため既に満たしている
+  - 最新版へ整合させることで、審査員視点でのバージョン認識ノイズを除去
+- **Action**: 以下のファイルで version label を v0.1.7 → v0.1.8 へ更新
+  - `README.md`（badge / 「公式 v0.1.7 準拠」見出し / footer）
+  - `aidlc-docs/aidlc-state.md`（Compliance / Operations 行 / Adaptive Workflow 注記）
+  - `aidlc-docs/execution-plan.md`（Adaptive Skip ログ）
+  - `aidlc-docs/inception/requirements/requirements.md`（準拠ヘッダ / Intent Analysis User Request）
+  - `aidlc-docs/inception/user-stories/{personas,stories}.md`（準拠ヘッダ）
+  - `aidlc-docs/inception/application-design/{components,aws-architecture}.md`（準拠ヘッダ）
+  - `aidlc-docs/construction/plans/construction-plan.md`（準拠ヘッダ）
+  - `aidlc-docs/extensions/business/business-intent.md`（配置根拠）
+  - `aidlc-docs/extensions/demo/demo-scenario.md`（参照なし、変更不要）
+  - `aidlc-docs/extensions/meta/methodology-honesty.md`（主張1）
+  - `aidlc-docs/extensions/meta/self-reference.md`（配置根拠）
+  - `aidlc-docs/operations/README.md`（公式状態の見出しと本文。v0.1.7 から状態変更なしを注記として保持）
+- **Preserved (Historical Records)**: `audit.md` 内の Entry-001〜Entry-007 (Bolt-00, 2026-05-04 当時の v0.1.7 起案) および Entry-010 (2026-05-10 の v0.1.8 ルール参照追加経緯) は append-only 規約に従い無変更。これらは「v0.1.7 として起案された事実」と「v0.1.8 へ移行した事実」の双方の証跡となる
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---

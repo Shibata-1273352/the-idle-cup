@@ -2,7 +2,7 @@
 
 > **役割**: Intent を機能要件 / 非機能要件に分解し、設計と検証の根拠とする。
 > **読者**: チーム / 審査員 / Phase 2 の協業先
-> **準拠**: AI-DLC v0.1.7 `inception/requirements/requirements.md` 配置規約
+> **準拠**: AI-DLC v0.1.8 `inception/requirements/requirements.md` 配置規約
 
 ---
 
@@ -10,7 +10,7 @@
 
 | 項目 | 値 |
 |---|---|
-| **User Request** | AWS Summit Japan 2026 AI-DLC ハッカソン応募作品「人をダメにするサービス」を AI-DLC v0.1.7 公式ワークフローに準拠して構想する |
+| **User Request** | AWS Summit Japan 2026 AI-DLC ハッカソン応募作品「人をダメにするサービス」を AI-DLC v0.1.8 公式ワークフローに準拠して構想する |
 | **Request Type** | New Project (Greenfield) |
 | **Scope** | System-wide / Cross-system（推論基盤・UI・Discovery 物販を視野） |
 | **Initial Complexity** | Complex（多層の倫理的制約 / Phase 2 拡張領域 / 審査基準への直接寄与） |

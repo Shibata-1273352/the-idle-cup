@@ -56,7 +56,7 @@ retroactive であることは欠陥ではなく、**作品テーマの開発プ
 
 ハッカソン審査において、本プロジェクトは以下を主張する：
 
-### 主張 1: 公式 v0.1.7 階層に厳密準拠
+### 主張 1: 公式 v0.1.8 階層に厳密準拠
 - Inception / Construction / Operations の 3 フェーズ
 - `aidlc-state.md` / `audit.md` / `execution-plan.md` の必須3ファイル
 - stage フォルダ命名規則の踏襲

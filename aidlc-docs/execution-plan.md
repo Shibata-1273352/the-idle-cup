@@ -66,7 +66,7 @@
 | Stage | Skip 判断 | 根拠 |
 |---|---|---|
 | Reverse Engineering | Skip | Greenfield プロジェクト |
-| Operations 詳細実装 | Defer to Phase 2 | 公式 v0.1.7/v0.1.8 でも placeholder、ハッカソンスコープ外 |
+| Operations 詳細実装 | Defer to Phase 2 | 公式 v0.1.8 でも placeholder、ハッカソンスコープ外 |
 | Bolt real-time 化（完成形） | Defer to Phase 2 | 2026-05-10 から real-time 開始、完成は Phase 2 |
 | Construction Per-Unit Loop の実装 | Defer to Phase 2 | 書類審査の評価対象は Inception 成果物 |
 

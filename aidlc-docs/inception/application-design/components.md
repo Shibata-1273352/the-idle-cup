@@ -1,7 +1,7 @@
 # Application Design — Components
 
 > **役割**: 要件 / ユーザーストーリーをコンポーネント（Unit）の責務に分解する。
-> **準拠**: AI-DLC v0.1.7 `inception/application-design/components.md` 配置規約
+> **準拠**: AI-DLC v0.1.8 `inception/application-design/components.md` 配置規約
 > **読者**: チーム / Construction phase の開発者 / 審査員（Unit 分解の評価軸）
 
 ---

@@ -1,7 +1,7 @@
 # AWS Architecture — The Idle Cup
 
 > **役割**: コンポーネント設計を AWS マネージドサービスに具体化し、性能 / セキュリティ / コスト / 運用観点を確定する。
-> **準拠**: AI-DLC v0.1.7 `inception/application-design/aws-architecture.md` 配置規約
+> **準拠**: AI-DLC v0.1.8 `inception/application-design/aws-architecture.md` 配置規約
 > **読者**: チーム / 審査員（AWS 上での開発・稼働の評価軸）/ Phase 2 の SRE
 
 ---

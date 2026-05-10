@@ -1,7 +1,7 @@
 # Personas — The Idle Cup
 
 > **役割**: User Stories の語り手であるユーザー類型を定義する。
-> **準拠**: AI-DLC v0.1.7 `inception/user-stories/personas.md`
+> **準拠**: AI-DLC v0.1.8 `inception/user-stories/personas.md`
 > **読者**: チーム / 審査員 / Phase 2 プロダクトオーナー
 
 ---

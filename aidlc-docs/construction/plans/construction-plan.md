@@ -1,7 +1,7 @@
 # Construction Plan — Unit Decomposition for The Idle Cup
 
 > **役割**: Inception の成果（要件 / ストーリー / コンポーネント）を 6 つの Unit of Work に分解し、Construction Phase の per-unit loop の進行表とする。
-> **準拠**: AI-DLC v0.1.7 `construction/plans/` 配置規約
+> **準拠**: AI-DLC v0.1.8 `construction/plans/` 配置規約
 > **読者**: 開発者 / メンタリング AI-DLC Champion / 審査員（Unit 分解の評価軸）
 
 ---
