@@ -173,7 +173,7 @@ AWS Lambda + DynamoDB + Step Functions（後段呼び出し）
 ```
 
 #### 主要 FR / NFR
-- FR-10, FR-11, FR-12, FR-13, FR-23
+- FR-10, FR-11, FR-12, FR-13, FR-22, FR-23
 
 #### 主要技術
 Lambda + DynamoDB
@@ -227,10 +227,12 @@ The Cup / Idle Index / Whisper トリガを統合した **唯一の UI**。
 - Long-press handler: U5 を呼び出して Whisper を表示
 - Console view: U4 出力 + manual decisions list
 - "今日は自分で" モード切替: NFR-14
+- **Share Card Generator**: PII / 状態ベクトル数値を含まないシェア用画像（風味記述 + Whisper 抜粋 + `#TheIdleCup`）を生成し、OS Share Sheet へ渡す（FR-06,07 の Whisper を消費、NFR-09 の append-only 監査と整合）
 
 #### 主要 FR / NFR
-- FR-01〜05, FR-10〜13
-- NFR-13（同時表示）, NFR-14（解除手段）
+- FR-01〜05, FR-10〜13（Console / Cup 表示・モード切替）
+- FR-06, FR-07, FR-08（Share Card に同梱する Whisper 抜粋）
+- NFR-09（共有時のログ append-only）, NFR-13（同時表示）, NFR-14（解除手段）
 
 #### 主要技術
 Phase 1: 静的プロトタイプ（HTML / Next.js）

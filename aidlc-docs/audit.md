@@ -162,4 +162,34 @@
   - Units Generation: ✅ Complete (construction-plan.md にて完了)
 - **Approver Pending**: テックリード（提出前 final review）
 
+### Entry-016: Codex 第三者レビューの実施
+- **Timestamp**: 2026-05-10T14:50:00+09:00
+- **Stage**: Inception (Pre-submission Quality Gate)
+- **Action**: 提出前の独立レビューとして Codex (gpt-5-codex) に審査員視点での評価を依頼。評価軸は書類審査公式基準（Intent / Unit分解 / 創造性とテーマ適合性 / ドキュメント品質）+ 文書間の不整合・矛盾検出
+- **Reviewer**: Codex (subagent type: codex:codex-rescue)
+- **Approver**: テックリード（レビュー結果の受領を承認）
+- **Result Summary**:
+  - スコア: Intent 5/5, Unit分解 4/5, 創造性 5/5, ドキュメント品質 4/5
+  - 致命リスク: なし（書類審査即失格となる矛盾は検出されず）
+  - 主要指摘:
+    1. README.md の Construction セクション説明が、実装サマリ・詳細設計の存在を示唆する過剰表現になっていた（実体は Construction Plan のみ）
+    2. components.md U4 の「主要 FR」リストから FR-22 が欠落
+    3. aws-architecture.md NFR 紐付け表に NFR-05 (fallback) と NFR-12 (Whisper 常時アクセス可能性) の明示行が欠落
+    4. ペルソナ → Story → FR/NFR → Unit → AWS の追跡が複数文書にまたがり 1 枚ビューが不在
+    5. US-08（SNS シェア）の Unit 割当が U5 のみで U6 (UI / Share Card 生成) が含まれていない
+    6. methodology-honesty.md §1 の `extensions/meta/bolts/` 表記が、現時点で実体があるかのように読める（実態は Phase 2 配置）
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`（同 Bolt 内のレビュー段）
+
+### Entry-017: Codex 指摘の適用（提出前 quality gate）
+- **Timestamp**: 2026-05-10T14:55:00+09:00
+- **Action**: Entry-016 の指摘 1〜6 を反映
+  1. `README.md` Construction 行を「Construction Plan と 6 Units の分解（per-unit 詳細設計および実装は Phase 2）」へ修正
+  2. `aidlc-docs/inception/application-design/components.md` U4 主要 FR に **FR-22 を追加**
+  3. `aidlc-docs/inception/application-design/aws-architecture.md` §8 NFR 紐付け表に **NFR-05 / NFR-12 の専用行を追加**
+  4. `aidlc-docs/inception/user-stories/stories.md` 末尾近くに **「一枚トレーサビリティ表（Persona → Story → FR/NFR → Unit → AWS）」セクションを新設**
+  5. `aidlc-docs/inception/user-stories/stories.md` ストーリー → Unit 対応表で **US-08 を U5 + U6 に再割当**、`components.md` U6 構成に **Share Card Generator（PII 非含 / Whisper 抜粋・風味記述・ハッシュタグのみ）を追記**、U6 主要 FR / NFR に FR-06,07,08 / NFR-09 を反映
+  6. `aidlc-docs/extensions/meta/methodology-honesty.md` §1 を「Phase 1 では `audit.md` 本文のみが実体。`extensions/meta/bolts/` の Bolt 単位ビューは §5 のとおり Phase 2 配置予定」へ書き換え
+- **Note**: 指摘 7「執行 / 状態チェックリストの提出直前更新」は、本日の GitHub push / 応募フォーム送信実施時に同タイミングで反映する（Entry-018 以降で記録）
+- **Approver**: テックリード（適用後の review pending）
+
 ---

@@ -8,7 +8,7 @@
 
 ## 1. 事実の明示
 
-本プロジェクトの Bolt 単位ログ（`extensions/meta/bolts/` および `audit.md`）の **2026-05-04 以前のエントリは、retroactive に再構成された**。
+本プロジェクトの Bolt 単位ログ（**Phase 1 では `audit.md` 本文のみが実体**。`extensions/meta/bolts/` 配下の Bolt 単位ビュー実装は §5 のとおり Phase 2 配置予定）の **2026-05-04 以前のエントリは、retroactive に再構成された**。
 
 具体的には：
 

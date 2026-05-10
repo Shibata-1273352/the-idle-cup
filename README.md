@@ -102,7 +102,7 @@ AI completes these decisions before the user wakes up. The user is left with onl
 | ディレクトリ | 内容 |
 |---|---|
 | [`aidlc-docs/inception/`](aidlc-docs/inception/) | 🔵 要件・ユーザーストーリー・アプリケーション設計（AWS アーキテクチャ含む） |
-| [`aidlc-docs/construction/`](aidlc-docs/construction/) | 🟢 6 Units の機能/非機能/インフラ設計と実装サマリ |
+| [`aidlc-docs/construction/`](aidlc-docs/construction/) | 🟢 Construction Plan と 6 Units の分解（per-unit の機能/非機能/インフラ設計および実装は Phase 2） |
 | [`aidlc-docs/operations/`](aidlc-docs/operations/) | 🟡 Phase 2 / Designed |
 
 ### 採用拡張（`extensions/` 配下）

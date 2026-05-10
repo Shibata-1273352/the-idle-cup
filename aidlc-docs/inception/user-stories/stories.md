@@ -183,14 +183,37 @@ US-10 のみ Phase 2 依存で independence が低下。Phase 2 開始時に dec
 
 | ストーリー | 主要 Unit |
 |---|---|
-| US-01, US-04 | U6: Life Delegation Console |
-| US-02 | U1: User State Estimator |
-| US-03, US-08, US-09 | U5: Confirmation Whisper |
-| US-04 | U4: Idle Index Calculator |
-| US-05 | U2: Coffee Selection Engine |
+| US-01 | U6: Life Delegation Console（Cup view） / U2, U3（一杯と抽出仕様の供給） |
+| US-02 | U1: User State Estimator / U2: Coffee Selection Engine |
+| US-03 | U5: Confirmation Whisper |
+| US-04 | U4: Idle Index Calculator / U6: Life Delegation Console（同時表示） |
+| US-05 | U2: Coffee Selection Engine（代替提示）/ U6（モード移行誘導） |
 | US-06 | U6: Life Delegation Console（モード切替） |
-| US-07 | U3: Brewing Parameter Generator |
-| US-10 | Phase 2 — Discovery Platform 拡張 |
+| US-07 | U3: Brewing Parameter Generator / U6（タイマー UI） |
+| US-08 | U5: Confirmation Whisper（テキスト供給） / U6: Life Delegation Console（Share Card 生成・OS Share Sheet 連携） |
+| US-09 | U5: Confirmation Whisper |
+| US-10 | Phase 2 — Discovery Platform 拡張（U7 / U8） |
+
+---
+
+## 一枚トレーサビリティ表（Persona → Story → FR/NFR → Unit → AWS）
+
+> 審査員が短時間で全体像を把握するための1枚ビュー。各セルの詳細は [`personas.md`](./personas.md) / [`../requirements/requirements.md`](../requirements/requirements.md) / [`../application-design/components.md`](../application-design/components.md) / [`../application-design/aws-architecture.md`](../application-design/aws-architecture.md) を参照。
+
+| Persona | Story | FR | NFR | Unit | 主要 AWS サービス |
+|---|---|---|---|---|---|
+| Hiroto / Sayaka | US-01 | FR-01〜FR-04 | NFR-01 | U6, U2, U3 | EventBridge Scheduler / Step Functions / Amplify (or S3+CloudFront) |
+| Hiroto / Kenji | US-02 | FR-14〜FR-17 | NFR-06, NFR-07 | U1, U2 | Lambda / DynamoDB / Secrets Manager（外部 API トークン） |
+| Sayaka / Mei | US-03 | FR-06〜FR-09 | NFR-02, NFR-08, NFR-12 | U5 | Amazon Bedrock (Claude) / Bedrock Guardrails |
+| Hiroto / Kenji | US-04 | FR-10〜FR-13, FR-22, FR-23 | NFR-13 | U4, U6 | Lambda / DynamoDB |
+| Sayaka | US-05 | FR-05 | NFR-05 | U2, U6 | Lambda / DynamoDB |
+| Kenji / Mei | US-06 | （UI モード制御） | NFR-14 | U6 | Amplify (or S3+CloudFront) |
+| Hiroto | US-07 | FR-20, FR-21 | （UI 体感） | U3, U6 | Lambda |
+| Sayaka / Mei | US-08 | FR-06, FR-07 | NFR-09 | U5, U6 | Bedrock (Claude) / Amplify (or S3+CloudFront) |
+| Kenji | US-09 | FR-09 | NFR-08, NFR-12 | U5 | Bedrock (Claude) + Bedrock Guardrails |
+| Mei | US-10 (Phase 2) | （Discovery 物販） | NFR-10, NFR-11 | Phase 2: U7 Discovery Connector / U8 Payment Adapter | EventBridge Pipes / Amazon Pay / SP-API / FBA |
+
+横断的関心事（共通基盤）: API Gateway / Cognito（認証）/ CloudWatch / X-Ray / CloudTrail（観測性 = NFR-15〜17）/ KMS（NFR-06〜09 暗号化）/ Step Functions DLQ（障害時）。
 
 ---
 
