@@ -2,6 +2,7 @@
 
 > **役割**: 本作品が解こうとしている問いと、その解の輪郭を一文で示す。Inception の起点。
 > **読者**: ハッカソン審査員 / メンタリング AI-DLC Champion / チーム外の協力者
+> **準拠**: AI-DLC v0.1.8 `inception/application-design/` 配下に配置（Intent Analysis 出力）
 > **更新規約**: Intent は安易に書き換えない。変える場合は audit.md に意図変更エントリを追記する。
 
 ---

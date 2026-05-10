@@ -105,7 +105,7 @@ AI completes these decisions before the user wakes up. The user is left with onl
 | [`aidlc-docs/construction/`](aidlc-docs/construction/) | 🟢 Construction Plan と 6 Units の分解（per-unit の機能/非機能/インフラ設計および実装は Phase 2） |
 | [`aidlc-docs/operations/`](aidlc-docs/operations/) | 🟡 Phase 2 / Designed |
 
-### 採用拡張（`extensions/` 配下）
+### 採用拡張（`aidlc-docs/extensions/` 配下）
 
 | ディレクトリ | 内容 |
 |---|---|

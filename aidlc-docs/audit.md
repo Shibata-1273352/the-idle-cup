@@ -223,4 +223,21 @@
 - **Preserved (Historical Records)**: `audit.md` 内の Entry-001〜Entry-007 (Bolt-00, 2026-05-04 当時の v0.1.7 起案) および Entry-010 (2026-05-10 の v0.1.8 ルール参照追加経緯) は append-only 規約に従い無変更。これらは「v0.1.7 として起案された事実」と「v0.1.8 へ移行した事実」の双方の証跡となる
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-019: 構造・参照の最終 quality gate（リンク切れ / v0.1.8 構造 / ID 整合）
+- **Timestamp**: 2026-05-10T15:20:00+09:00
+- **Stage**: Inception (Pre-submission Final Quality Gate)
+- **Action**: 全 markdown のリンク・パス・ID 参照を機械検証し、軽微な不整合を解消
+- **Verification Result**:
+  - markdown link (`[text](url)`) の relative path 切れ: **0 件**
+  - FR-01〜FR-23 / NFR-01〜NFR-17 / US-01〜US-10 の orphan 参照・連番 gap: **0 件**
+  - U1〜U6 の Unit ID 参照: 全件 `components.md` ヘッダ定義と一致（U7〜U10 は Phase 2 placeholder と明記済）
+  - audit.md Entry 連番: 001〜018 連続、欠落なし
+- **Applied Fixes**:
+  - `aidlc-docs/inception/plans/.gitkeep` / `aidlc-docs/inception/workspace-detection/.gitkeep` / `aidlc-docs/construction/build-and-test/.gitkeep` を新規配置し、v0.1.8 公式階層の標準ディレクトリを git 管理下で可視化
+  - `aidlc-docs/inception/application-design/aws-architecture.md` 第 5 節のダッシュボード行を、`extensions/business/business-intent.md` への正規 markdown link に変更（クリック追跡可能化）
+  - `README.md` 採用拡張セクション見出しの `extensions/` shorthand を `aidlc-docs/extensions/` に修正し、表内の絶対パスと表記を統一
+  - `aidlc-docs/inception/application-design/intent.md` ヘッダに「**準拠**: AI-DLC v0.1.8 `inception/application-design/` 配下に配置（Intent Analysis 出力）」を追加し、他 inception 文書との 準拠記載一貫性を確立
+- **Approver**: テックリード
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---

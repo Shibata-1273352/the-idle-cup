@@ -150,7 +150,7 @@
 
 ### ダッシュボード
 - Phase 1: CloudWatch Dashboard 1 枚
-- Phase 2: QuickSight に展開、`extensions/business/business-intent.md` の KPI と直結
+- Phase 2: QuickSight に展開、[`extensions/business/business-intent.md`](../../extensions/business/business-intent.md) の KPI と直結
 
 ### アラーム
 - `pipeline_duration_seconds > 60s`
