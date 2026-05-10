@@ -56,10 +56,19 @@ retroactive であることは欠陥ではなく、**作品テーマの開発プ
 
 ハッカソン審査において、本プロジェクトは以下を主張する：
 
-### 主張 1: 公式 v0.1.8 階層に厳密準拠
-- Inception / Construction / Operations の 3 フェーズ
-- `aidlc-state.md` / `audit.md` / `execution-plan.md` の必須3ファイル
-- stage フォルダ命名規則の踏襲
+### 主張 1: 公式 v0.1.8 階層には準拠／Mob 運用は Phase 1 未達
+
+本プロジェクトの「v0.1.8 準拠」主張は、以下のように **準拠範囲を分離して** 表明する。
+
+| 準拠領域 | Phase 1 状態 | 補足 |
+|---|---|---|
+| **公式階層（ディレクトリ・ファイル構造）** | ✅ 厳密準拠 | Inception / Construction / Operations の 3 フェーズ、必須3ファイル、stage フォルダ命名規則 |
+| **必須3ファイル運用** | ✅ 配置・整合済み | `aidlc-state.md` / `audit.md` / `execution-plan.md` |
+| **Mob Elaboration / Mob Construction** | ❌ Phase 1 未達 | Phase 2 で最低 1 セッション実施を計画（§5） |
+| **5〜7 名クロスファンクショナル同席** | ❌ Phase 1 未達 | 個人開発スコープでは構造的に不可。Phase 2 で仮想 Mob を含めて実施 |
+| **Bolt 単位ログの real-time 化** | 🟡 部分達成 | 2026-05-04 以前は retroactive、2026-05-10 以降は real-time |
+
+つまり本プロジェクトの主張は **「ハードな階層準拠 + ソフトな運用準拠の段階開示」** であり、すべてを一括して「v0.1.8 準拠」と称することは意図的に避けている（README バッジも `hierarchy-compliant` と限定表記）。
 
 ### 主張 2: 方法論的乖離を隠さず明示
 - 本書の存在自体が誠実性の証拠

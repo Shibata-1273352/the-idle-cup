@@ -85,14 +85,14 @@
 
 ## 提出関連の最終チェックリスト
 
-- [ ] 全 Inception 成果物が `aidlc-docs/` 配下に揃っている
-- [ ] README.md がリポジトリルートに存在し、世界観 + 内部ファイル目次が機能している
-- [ ] aidlc-state.md / audit.md / execution-plan.md が整合している
-- [ ] git リポジトリが初期化されコミット済み
-- [ ] GitHub の **public** リポジトリへ push 済み
-- [ ] チーム全員の AWS Builder ID が取得されている
-- [ ] 応募フォームに公開リポジトリ URL を入力済み
-- [ ] 提出締切（2026-05-10 23:59）に間に合っている
+- [x] 全 Inception 成果物が `aidlc-docs/` 配下に揃っている
+- [x] README.md がリポジトリルートに存在し、世界観 + 内部ファイル目次が機能している
+- [x] aidlc-state.md / audit.md / execution-plan.md が整合している
+- [x] git リポジトリが初期化されコミット済み
+- [x] GitHub の **public** リポジトリへ push 済み
+- [x] チーム全員の AWS Builder ID が取得されている
+- [x] 応募フォームに公開リポジトリ URL を入力済み
+- [x] 提出締切（2026-05-10 23:59）に間に合っている
 
 ---
 

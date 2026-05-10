@@ -1,0 +1,14 @@
+# bolts/
+
+`extensions/meta/bolts/` は Bolt 単位ログの real-time ビューを格納するディレクトリ。
+
+## 状態（Phase 1 / 提出時点）
+
+- ディレクトリは確保済み（本ファイル `.gitkeep` で保証）
+- 実体ファイルは未配置。Phase 1 では `aidlc-docs/audit.md` 本文が Bolt ログの SoT
+- `audit.md` の 2026-05-04 以前のエントリは retroactive 再構成、2026-05-10 以降は real-time（詳細: `../methodology-honesty.md` §1, §5）
+
+## Phase 2 で配置されるもの
+
+- 各 Bolt セッションログ（Mob Elaboration / Mob Construction の合議記録）
+- audit ↔ git log 整合性検証スクリプトの出力

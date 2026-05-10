@@ -228,6 +228,7 @@ The Cup / Idle Index / Whisper トリガを統合した **唯一の UI**。
 - Console view: U4 出力 + manual decisions list
 - "今日は自分で" モード切替: NFR-14
 - **Share Card Generator**: PII / 状態ベクトル数値を含まないシェア用画像（風味記述 + Whisper 抜粋 + `#TheIdleCup`）を生成し、OS Share Sheet へ渡す（FR-06,07 の Whisper を消費、NFR-09 の append-only 監査と整合）
+  - **責務境界（U5 ⇔ U6）**: Share Card に載るテキストは U5 が出力した Whisper を **そのまま抜粋**するのみで、U6 内で再生成・LLM 再呼び出しは行わない。これにより自然言語生成責務は U5 単一に集約され、Bedrock 呼び出しが U5 のみという設計制約が保たれる。Share Card の画像合成・レイアウトのみが U6 の責務である。
 
 #### 主要 FR / NFR
 - FR-01〜05, FR-10〜13（Console / Cup 表示・モード切替）

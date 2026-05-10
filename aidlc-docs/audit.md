@@ -240,4 +240,37 @@
 - **Approver**: テックリード
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-020: 締切当日の二重独立レビュー（Claude + Codex）と修正適用
+- **Timestamp**: 2026-05-10T17:58:00+09:00
+- **Stage**: Inception (Final Pre-submission Review Gate)
+- **Proposer**: AI（Claude Code, Opus 4.7）
+- **Approver**: テックリード（修正方針の明示承認 — 全9件一括適用 / Gはdemo-scenario Scene3 / 自己評価は弱める）
+- **Action**: 書類審査公式評価基準（Intent / Unit分解 / 創造性とテーマ適合性 / ドキュメント品質）に対し、独立した二系統のレビューを並行実施
+  - Reviewer A: Claude (subagent: general-purpose) — 結果 B+（Top5修正で A− 射程）
+  - Reviewer B: Codex (subagent: codex:codex-rescue) — 結果 B（提出完了証跡と運用準拠の弱さで減点、Show-stopperあり）
+- **Synthesized Findings（両者一致 / 各独自）**:
+  - 一致 Show-stopper: `execution-plan.md:88-95` チェックリスト未完了
+  - 一致: バッジを `hierarchy-compliant` へ弱める / `methodology-honesty.md` の準拠範囲を分離 / Unit Economics に仮説脚注
+  - Claude独自: README に Who/What/Why ボックス / U5⇔U6 責務境界 / aws-architecture フロー図に U5 破線 / `aidlc-state.md` の絶対パス除去 / `bolts/.gitkeep` 配置 / テーマのダーク側1滴
+  - Codex独自: `intent.md` 成功条件に「効果実証ではなく体験仮説」予防的位置づけ
+- **Applied Fixes（13箇所、9論点）**:
+  1. `README.md:6` バッジ → `v0.1.8-hierarchy-compliant`
+  2. `README.md:14` 直下に Who / What / Why 3行ボックス新設
+  3. `aidlc-docs/aidlc-state.md:11` Phase値を「Lock 待ち」→「Lock 済 / Phase 2 待機」
+  4. `aidlc-docs/aidlc-state.md:73-80` 「次のアクション」を「提出後 / Phase 2 移行アクション」へ書換（公開リポジトリに不適なローカル絶対パスを除去）
+  5. `aidlc-docs/execution-plan.md:88-95` 提出関連チェックリストを全 `[x]` へ
+  6. `aidlc-docs/extensions/meta/methodology-honesty.md` 主張1 を準拠領域マトリクス化（階層✅ / Mob運用❌ / Bolt🟡 を分離開示）
+  7. `aidlc-docs/extensions/meta/self-reference.md:25` 自己評価断定文を「機能することを意図／最終評価は審査員に委ねる」へトーン調整
+  8. `aidlc-docs/extensions/business/business-intent.md:73` Unit Economics 直下に仮説脚注（Blue Bottle系ARPU + D2C解約率レンジを根拠として明記、Phase 1 KPI と段階分離）
+  9. `aidlc-docs/inception/application-design/components.md:230` 直後に U5⇔U6 責務境界1行（Share Card は U5 出力をそのまま抜粋、U6 内で再生成しない）
+  10. `aidlc-docs/inception/application-design/aws-architecture.md` Phase 1 アーキ図に「U5 (on-demand, by U6 long-press)」を破線追記
+  11. `aidlc-docs/extensions/demo/demo-scenario.md` Scene 3 に画面下部の小文字「あなたは今、自分でこのデモを観るかどうかさえ決めていません」を追加（テーマのダーク側1滴）
+  12. `aidlc-docs/extensions/meta/bolts/.gitkeep` 新規配置（`methodology-honesty.md` §5 の Phase 2 計画と整合、Phase 1 状態を README として記述）
+  13. `aidlc-docs/inception/application-design/intent.md` §5 直後に「Phase 1 は効果実証ではなく体験仮説 (experience hypothesis)」の予防的位置づけを追加
+- **Rationale**:
+  - 二系統独立レビューにより、単一視点の盲点（自己評価の過大さ・準拠主張の傷・提出証跡の未完）を相互補完的に検出
+  - 一括適用判断の根拠: 修正は全て低リスクな文書編集（API/挙動変更なし）、所要約95分で締切前完了可能、両レビューの一致点と独自指摘の双方を採択することで A− 射程に押し上げ
+- **Status**: ✅ 適用完了 / 提出前最終 review pending（テックリード）
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---

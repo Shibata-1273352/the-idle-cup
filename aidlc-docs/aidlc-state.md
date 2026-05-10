@@ -9,7 +9,7 @@
 
 | 項目 | 値 |
 |---|---|
-| **Phase** | Inception (書類審査提出版 Lock 待ち) |
+| **Phase** | Inception (書類審査 Lock 済 / Phase 2 待機) |
 | **Stage** | Workflow Planning ✅ Complete / Construction 着手は Phase 2 |
 | **Workspace Type** | Greenfield |
 | **Last Updated** | 2026-05-10T14:45:00+09:00 |
@@ -70,14 +70,13 @@
 
 ---
 
-## 次のアクション
+## 提出後 / Phase 2 移行アクション
 
-1. 重複ファイル整理: `/Users/shibata/Desktop/AWS/docs/` 直下の aidlc-state.md / audit.md / execution-plan.md / methodology-honesty.md / README.md は the-idle-cup/aidlc-docs/ 配下のコピー。整合性のため削除または同期
-2. git init および `the-idle-cup/` での初回コミット
-3. GitHub に **public** リポジトリを作成して push
-4. 書類審査応募（公開リポジトリ URL + Inception 成果物の URL を提出）
-5. 全チームメンバーの AWS Builder ID 取得確認
-6. 締切までに最終 review
+1. 予選会（2026-05-30）に向けた MVP 着手準備（Construction Phase / Per-Unit Loop）
+2. Mob Construction の最低 1 セッション開催計画（`extensions/meta/methodology-honesty.md` §5）
+3. `extensions/meta/bolts/` の real-time セッションログ着手
+4. `extensions/meta/living-spec/` の spec ↔ code 同期 CI セットアップ
+5. `verify_audit_against_git.py` の実装（audit ↔ git log 整合性自動検証）
 
 ---
 

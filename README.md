@@ -3,13 +3,21 @@
 > **This is not a coffee app.**
 > **It is a service that removes decisions from your day.**
 
-[![AI-DLC](https://img.shields.io/badge/AI--DLC-v0.1.8--compliant-blue)](https://github.com/awslabs/aidlc-workflows)
+[![AI-DLC](https://img.shields.io/badge/AI--DLC-v0.1.8--hierarchy--compliant-blue)](https://github.com/awslabs/aidlc-workflows)
 [![Phase](https://img.shields.io/badge/Phase-Inception-green)](aidlc-docs/aidlc-state.md)
 [![Methodology](https://img.shields.io/badge/Methodology-Honest-purple)](aidlc-docs/extensions/meta/methodology-honesty.md)
 
 開発では AI が実装し、人間が承認する。The Idle Cup では AI が生活を実装し、人間が一杯だけを承認する。
 
 **AWS Summit Japan 2026 AI-DLC ハッカソン 応募作品**
+
+---
+
+## 📌 Who / What / Why
+
+> **Who**: 朝の判断疲労に侵食される知的労働者・AI ネイティブ世代
+> **What**: AI が一日の判断を完了させ、ユーザーには「一杯の承認」だけが残る **判断委譲プラットフォーム**（Discovery Platform）
+> **Why**: 判断削減は堕落ではなく、Larry Wall 的「怠慢 (Laziness as a virtue)」の生活への拡張である
 
 ---
 
