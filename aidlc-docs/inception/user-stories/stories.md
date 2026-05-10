@@ -59,7 +59,7 @@
 > **So that** 必要なとき**だけ**選定の物語を受け取り、必要ないとき沈黙のままにできる
 
 ### Acceptance Criteria
-- [ ] AC-03.1: 長押し検知後 1.5 秒以内にフェードイン（NFR-02）
+- [ ] AC-03.1: 長押し検知後 1.5 秒以内にローディング表示 + フェードイン開始、Whisper 本文は token streaming で順次描画（NFR-02）
 - [ ] AC-03.2: Whisper は 80〜200 文字（FR-08）
 - [ ] AC-03.3: PII は丸めて表現される（"昨夜の眠りは浅く" 程度、FR-09）
 - [ ] AC-03.4: Whisper は Bedrock Guardrails 経由で生成される（NFR-08）

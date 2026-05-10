@@ -113,7 +113,7 @@ After all Units:
 |---|---|---|
 | Functional Design | ✅ | 画面遷移図 / コンポーネント構造 |
 | NFR Requirements | ✅ | NFR-13, NFR-14, ユーザビリティ |
-| NFR Design | ✅ | 長押し検知 1.5 秒 / アクセシビリティ |
+| NFR Design | ✅ | 長押し検知 1.5 秒トリガー / 1.5 秒以内ローディング表示 + token streaming 描画（NFR-02）/ アクセシビリティ |
 | Infrastructure Design | ✅ | Amplify / S3+CloudFront 配信 |
 | Code Generation | ✅ | Next.js + Storybook |
 

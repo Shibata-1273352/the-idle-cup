@@ -60,7 +60,7 @@ AI completes these decisions before the user wakes up. The user is left with onl
 
 **作品テーマ** は AI-DLC を生活に反転適用します。AI が日常の判断と実行を主導し、人間が承認するのは「今日の一杯」だけ。承認の対象が極限まで縮約された世界では、人間は判断疲れから解放され、ささやかな儀式に時間を取り戻します。
 
-**開発プロセス** は AI-DLC で本作品を構築しています。`aidlc-docs/inception/` が Inception 成果物、`aidlc-docs/construction/` が Construction 成果物、`aidlc-docs/audit.md` が全意思決定の不変ログとして機能します。テーマと方法論が同型であるため、本作品は AI-DLC の有効性を実証する事例として機能します。
+**開発プロセス** は AI-DLC で本作品を構築しています。`aidlc-docs/inception/` が Inception 成果物、`aidlc-docs/construction/` が Construction 成果物、`aidlc-docs/audit.md` が全意思決定の不変ログとして機能します。テーマと方法論が同型であるため、本作品は **AI-DLC の生活への反転適用を検証する体験仮説（experience hypothesis）** として機能します（効果実証ではなく、また Mob 運用は Phase 1 未達。詳細は [`aidlc-docs/extensions/meta/methodology-honesty.md`](aidlc-docs/extensions/meta/methodology-honesty.md) §3 主張1 の準拠領域マトリクス、および [`aidlc-docs/inception/application-design/intent.md`](aidlc-docs/inception/application-design/intent.md) §5 の体験仮説位置づけ）。
 
 > **方法論的誠実性について**: 本プロジェクトの Bolt 単位ログは retroactive に再構成されています。隠さず明示することを選びました。詳細は [`aidlc-docs/extensions/meta/methodology-honesty.md`](aidlc-docs/extensions/meta/methodology-honesty.md) を参照してください。
 
@@ -68,7 +68,7 @@ AI completes these decisions before the user wakes up. The user is left with onl
 
 ## 💎 Demo Experience
 
-> 📸 **Visual demo (Phase 2 で配置)**: モックアップ画像 / 90秒アニメーション GIF を [`docs/images/`](docs/images/) 配下に配置予定。本書類審査版では脚本（[`aidlc-docs/extensions/demo/demo-scenario.md`](aidlc-docs/extensions/demo/demo-scenario.md)）が Demo の SoT。
+> 📸 **Visual**: 上部のオーバービュー画像は **Phase 1 配置済み**。**90秒モックアップ動画 / アニメーション GIF** は予選会前の MVP 着手と並行して [`docs/images/`](docs/images/) 配下へ配置予定（Phase 2）。書類審査版では Demo シナリオ脚本 [`aidlc-docs/extensions/demo/demo-scenario.md`](aidlc-docs/extensions/demo/demo-scenario.md) が Demo の SoT。
 
 ### ☕ The Cup — 説明なき一杯
 

@@ -354,4 +354,32 @@
 - **Status**: ✅ 提出可能状態
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-024: 外部レビュー（公開リポジトリ閲覧後）の指摘反映
+- **Timestamp**: 2026-05-10T19:25:00+09:00
+- **Stage**: Inception (Post-push External Review Reflection)
+- **Proposer**: 外部レビュアー（公開リポジトリ閲覧後の指摘）
+- **Approver**: テックリード（3 点指摘の全反映を明示承認）
+- **External Review Findings（受領した 3 点）**:
+  - [P1]-A: README.md の Demo 欄の矛盾 — `README.md:14` で overview 画像を表示しているのに `README.md:71` が「Visual demo は Phase 2 で配置予定」と書いており、審査員には「画像があるのに未配置扱い？」と見える
+  - [P1]-B: Whisper 1.5 秒要件と on-demand Bedrock 呼び出し設計の不整合 — `requirements.md:92`（NFR-02）と `stories.md:62`（AC-03.1）は「長押し検知から 1.5 秒以内にフェードイン」、一方 `aws-architecture.md:28` は「長押し時のみ Bedrock invoke」。on-demand 生成で 1.5 秒応答 SLA は危うい
+  - [P2]: README の AI-DLC 有効性主張が honesty docs より強い — `README.md:63` は「AI-DLC の有効性を実証する事例」と言い切っているが、`methodology-honesty.md:67` は Mob 運用未達を明示し、`intent.md:100` は効果実証ではなく体験仮説と位置づけている
+- **Whisper 整合方針の選択（A vs B）**:
+  - 案A: 朝パイプラインで丸め済み Whisper を事前生成（Step Functions に U5 を含める） → **不採用**。`aws-architecture.md` §0 の「Bedrock 呼び出しは U5 単一に集約 / Cup 提示時には呼ばず長押し時のみ invoke」という設計上の鋭い選択を放棄することになり、また長押し開示率が低い設計（KPI として「あえて低く保つ」）と矛盾し、無駄な Bedrock コストが発生
+  - 案B: UI 応答性のみ緩和（loading skeleton + token streaming） → **採用**。設計の鋭さを保ったまま、UI 要件を業界標準のパターン（loading + streaming）に整合させる
+- **Applied Fixes（5 ファイル）**:
+  1. `README.md:71` Demo 欄を「overview 画像は Phase 1 配置済み / 90秒モックアップ動画・GIF は Phase 2 配置」と段階分離表記へ書き換え（[P1]-A）
+  2. `aidlc-docs/inception/requirements/requirements.md:92` NFR-02 を「長押し検知から 1.5 秒以内にローディング表示開始 + フェードイン、Whisper 本文は token streaming で順次描画」へ緩和（[P1]-B-1）
+  3. `aidlc-docs/inception/user-stories/stories.md:62` AC-03.1 を NFR-02 と同期した文言へ更新（[P1]-B-2）
+  4. `aidlc-docs/inception/application-design/aws-architecture.md:223` NFR-02 紐付けを「UI ローディング表示（即時）+ Bedrock streaming レスポンス + on-demand 設計のまま長押し時のみ Bedrock invoke を保持」へ書き換え（[P1]-B-3）
+  5. `aidlc-docs/construction/plans/construction-plan.md:116` U6 の NFR Design 行に「1.5 秒以内ローディング表示 + token streaming 描画（NFR-02）」を反映（[P1]-B-4）
+  6. `README.md:63` 「AI-DLC の有効性を実証する事例」→「AI-DLC の生活への反転適用を検証する体験仮説（experience hypothesis）」へトーン調整、`methodology-honesty.md` §3 主張1 マトリクスと `intent.md` §5 への参照を新設（[P2]）
+- **Deliberately NOT Changed**:
+  - `requirements.md:39` FR-06「長押し（≥1.5 秒）」 — これは**トリガー条件**（ジェスチャ判定の最小時間）であり、応答 SLA ではない。レビュアーも区別している
+  - `aws-architecture.md` §0 の「Bedrock 呼び出しは U5 単一に集約 / 長押し時のみ invoke」 — 設計上の鋭い選択として保持
+- **Methodological Significance**:
+  - 公開リポジトリ閲覧後の外部レビューを append-only で受け入れた事実は、`methodology-honesty.md` の主張する「事後性こそが両世界を貫く」をさらに体現する記録になる
+  - レビュー → 受領 → 検討（案 A/B）→ 反映 → audit という流れが Mob 合議の段階的代替として機能している
+- **Status**: ✅ 適用完了 / 提出可能状態（リモート同期は次の commit & push にて）
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---
