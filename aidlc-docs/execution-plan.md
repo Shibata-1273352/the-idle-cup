@@ -9,7 +9,7 @@
 ## Approval
 
 - **Initial Approval**: テックリード, 2026-05-04T00:04:00+09:00
-- **Latest Revision**: 2026-05-10T14:45:00+09:00（Inception 成果物 real-time authoring の確定反映）
+- **Latest Revision**: 2026-05-10T18:30:00+09:00（Entry-018〜021: v0.1.8 移行 / 二系統独立レビュー反映 / 追加レビュー観点 P0+P1 反映）
 
 ---
 

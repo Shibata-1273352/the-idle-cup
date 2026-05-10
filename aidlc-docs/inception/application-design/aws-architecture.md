@@ -14,7 +14,7 @@
 |---|---|---|
 | **時刻トリガ** | EventBridge Scheduler（per-user TZ） | 個別タイムゾーンでの cron 配信が**マネージドで完結** |
 | **オーケストレーション** | Step Functions（Standard Workflow） | 失敗・再試行・分岐の宣言的記述、長期実行と監査性、Express ではなく Standard を選定 |
-| **コンピュート** | Lambda × 6 Units（U1〜U5）+ U6 はエッジ配信 | サーバレス前提、朝のスパイクに**弾力性**、最小権限ロールを Unit ごとに分離 |
+| **コンピュート** | U1〜U5 は Lambda（5 関数 / 最小権限ロール分離）、U6 は静的配信（Phase 1: Amplify Hosting または S3 + CloudFront / Phase 2: React Native + Expo） | サーバレス前提、朝のスパイクに**弾力性**、Bedrock 呼び出しは U5 単一に集約 |
 | **生成 AI** | Amazon Bedrock (Claude Sonnet 4.6) + **Bedrock Guardrails** | 詩的トーン表現力 + PII / 医療助言 / 押し付けトーンの**宣言的抑止**。U5 のみが呼び出す境界設計 |
 | **状態 / カタログ** | DynamoDB Single-Table Design | 単一桁ms レイテンシ、状態ベクトルに **TTL 24h** を標準機能で適用 |
 | **長期保管 / 分析** | S3 + Athena | 不変・安価・SSE-KMS。Whisper サンプリング ≤1% |
