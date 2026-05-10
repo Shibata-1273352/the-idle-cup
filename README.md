@@ -39,7 +39,7 @@ AI completes these decisions before the user wakes up. The user is left with onl
 
 ## 🎯 Why this makes humans idle
 
-私たちは「人をダメにする」を、堕落ではなく、Larry Wall のいうプログラマーの美徳としての **怠慢 (Laziness as a virtue)** の拡張として解釈しました。怠慢を極限まで追求した先に、人間に残るのは何か。私たちはその答えを、AI に判断を委ねたあとに残る一杯のコーヒーと、それを淹れて飲む静かな儀式に置きました。
+私たちは「人をダメにする」を、堕落ではなく **怠慢 (Laziness as a virtue)** の生活への拡張として解釈しました。怠慢を極限まで追求した先に人間に残るのは、AI に判断を委ねたあとの一杯のコーヒーと、それを淹れて飲む静かな儀式です。哲学的な再解釈の詳細は [`aidlc-docs/inception/application-design/intent.md §4`](aidlc-docs/inception/application-design/intent.md) に譲ります（本書では Larry Wall 名の重複言及を `intent.md` に集約）。
 
 私たちはチームに AI-DLC を導入したとき、最初に戻ってきたのが朝にコーヒーを淹れる時間であることに気づきました。AI が実装の雑事を引き受け、人間に儀式が返ってきたのです。この構造を生活全般に拡張すれば、誰もがコーヒーの香りを取り戻せるのではないか——これが本作品の出発点です。
 
@@ -65,6 +65,8 @@ AI completes these decisions before the user wakes up. The user is left with onl
 ---
 
 ## 💎 Demo Experience
+
+> 📸 **Visual demo (Phase 2 で配置)**: モックアップ画像 / 90秒アニメーション GIF を [`docs/images/`](docs/images/) 配下に配置予定。本書類審査版では脚本（[`aidlc-docs/extensions/demo/demo-scenario.md`](aidlc-docs/extensions/demo/demo-scenario.md)）が Demo の SoT。
 
 ### ☕ The Cup — 説明なき一杯
 

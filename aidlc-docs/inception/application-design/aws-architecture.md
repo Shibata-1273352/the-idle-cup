@@ -6,6 +6,32 @@
 
 ---
 
+## 0. 1 分で読む技術ハイライト
+
+> **AWS 上で開発・稼働する**応募要件への端的応答。詳細は §1 以降。
+
+| 観点 | 採用 / 設計判断 | なぜ AWS か |
+|---|---|---|
+| **時刻トリガ** | EventBridge Scheduler（per-user TZ） | 個別タイムゾーンでの cron 配信が**マネージドで完結** |
+| **オーケストレーション** | Step Functions（Standard Workflow） | 失敗・再試行・分岐の宣言的記述、長期実行と監査性、Express ではなく Standard を選定 |
+| **コンピュート** | Lambda × 6 Units（U1〜U5）+ U6 はエッジ配信 | サーバレス前提、朝のスパイクに**弾力性**、最小権限ロールを Unit ごとに分離 |
+| **生成 AI** | Amazon Bedrock (Claude Sonnet 4.6) + **Bedrock Guardrails** | 詩的トーン表現力 + PII / 医療助言 / 押し付けトーンの**宣言的抑止**。U5 のみが呼び出す境界設計 |
+| **状態 / カタログ** | DynamoDB Single-Table Design | 単一桁ms レイテンシ、状態ベクトルに **TTL 24h** を標準機能で適用 |
+| **長期保管 / 分析** | S3 + Athena | 不変・安価・SSE-KMS。Whisper サンプリング ≤1% |
+| **観測性** | CloudWatch / X-Ray / CloudTrail | NFR-15〜17 を 3 サービスで網羅。`audit.md` の append-only 性は Phase 2 で **S3 Object Lock** 強化 |
+| **配信 / フロント** | Amplify Hosting または S3+CloudFront（Phase 1）→ React Native + Expo（Phase 2） | Phase 1 の demo を最速で公開 |
+| **IaC** | AWS CDK (TypeScript) | 全構成を宣言、`operations/` へ Phase 2 配置 |
+| **Phase 2 拡張** | Amazon Pay / SP-API / FBA / Alexa / EventBridge Pipes / QuickSight | Discovery / Voice / Pay の 3 軸拡張を**同一クラウド内で完結** |
+
+### 設計上の鋭い選択（審査員向けの 4 行）
+
+1. **Bedrock 呼び出しは U5 単一に集約**。Cup 提示時には呼ばず、**長押し時のみ** invoke することで朝のスパイクで Bedrock スロットルを起こさない（NFR-02 と整合）
+2. **ユニット境界はデータ契約（JSON Schema）で切る**。StateVector / CupSelection / BrewSpec / IdleIndex / Whisper の 5 契約が Unit 間結合の SoT（Phase 2 で `construction/{unit}/contracts.md` に展開）
+3. **失敗モードは Step Functions Catch + DynamoDB の "直近 7 日で最も承認された一杯"** で決定論的にフォールバック（NFR-05）
+4. **PII 取り扱いはカレンダー本文 / 睡眠生データを保管せず**、U1 内で集約値（schedule_density / sleep_quality）にのみ変換。Whisper コーパスは S3 サンプリング ≤1% / 30 日 TTL
+
+---
+
 ## 1. アーキテクチャ図（Phase 1: 提出時点 / Phase 2: 設計済）
 
 ### 1.1 Phase 1 — Inception 評価のための最小構成

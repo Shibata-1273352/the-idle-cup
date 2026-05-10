@@ -273,4 +273,30 @@
 - **Status**: ✅ 適用完了 / 提出前最終 review pending（テックリード）
 - **Bolt ID**: `bolt-01-inception-realtime-authoring`
 
+### Entry-021: 追加レビュー観点の網羅検査と P0/P1 反映
+- **Timestamp**: 2026-05-10T18:30:00+09:00
+- **Stage**: Inception (Final Pre-submission Coverage Audit)
+- **Proposer**: AI（Entry-020 の二系統レビューでカバーされない観点の補完監査）
+- **Approver**: テックリード（修正範囲「P0+P1全て＋AWS技術ハイライト」を明示承認）
+- **Coverage Gaps Identified（Entry-020 の4観点で検出されなかった領域）**:
+  - 法務 / OSS 規約: LICENSE 不在、コーヒー豆データ引用方針の不在
+  - 第一印象 / 視覚: モックアップ画像・GIF・スクリーンショットの不在（README が文字主体）
+  - 審査員ペルソナ別の届き方: AWS SA 系審査員向けの「1分で読む技術ハイライト」が不在
+  - 文書冗長性: Larry Wall 引用が4箇所（README ×2 / intent.md ×2 / self-reference 参考文献）に分散
+- **Applied Fixes（5箇所）**:
+  1. `LICENSE` 新規配置（Apache-2.0、awslabs/aidlc-workflows と同一ライセンス）
+  2. `aidlc-docs/extensions/business/business-intent.md` §7 リスク表に「焙煎所の豆データの著作権・利用規約」行を追加（Phase 1 は一般名称・引用範疇に限定、Phase 2 で書面合意 → `operations/data-licensing.md` 配置）
+  3. `docs/images/.gitkeep` 新規配置 + README §💎 Demo Experience 冒頭に画像枠 placeholder と Phase 2 配置予定の明記
+  4. `aidlc-docs/inception/application-design/aws-architecture.md` §0 として「1 分で読む技術ハイライト」を新設（10 サービス × 採用判断 / なぜ AWS か + 設計上の鋭い選択 4 点）
+  5. `README.md` §🎯 Why this makes humans idle 内の Larry Wall 言及を圧縮し、`intent.md §4` への参照に集約（Who/What/Why ボックス・intent.md 正典・self-reference 参考文献の 3 箇所体制へ）
+- **Coverage After Fix**:
+  - 4観点（Intent / Unit分解 / 創造性 / ドキュメント品質）+ 法務 + 視覚 + 審査員ペルソナ別 + 冗長性 = **計8観点をカバー**
+  - 残置観点（提出後または余力対応）: チーム情報の所在、デモ動画/GIF 実体、CONTRIBUTING.md / SECURITY.md、CI/lint 設定、文書間トーンの完全統一
+- **Rationale（一括適用判断）**:
+  - 全変更は文書編集と新規メタファイル配置のみで API/挙動変更なし、低リスク
+  - LICENSE 取得は OSS 公開リポジトリの慣習・法務予防の最低ライン
+  - AWS 技術ハイライトの追加で「設計のみ提出」が SA 系審査員に届きやすくなる
+- **Status**: ✅ 適用完了
+- **Bolt ID**: `bolt-01-inception-realtime-authoring`
+
 ---
